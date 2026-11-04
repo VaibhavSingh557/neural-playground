@@ -1,0 +1,27 @@
+:root{--bg:#eef0f6;--ink:#16192b;--mute:#5c6280;--card:#fafbff;--line:#d3d8ea;--a:#2f5bff;--b:#f2a900;--ai:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1020;--ink:#e8ebfa;--mute:#98a0c4;--card:#171a30;--line:#2b3052;--a:#6f8dff;--ai:#0b1020}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 ui-rounded,"Avenir Next",system-ui,sans-serif;padding:max(1rem,env(safe-area-inset-top,0px)) 1rem max(2rem,env(safe-area-inset-bottom,0px))}
+main{max-width:860px;margin:0 auto}
+h1{font-size:clamp(1.6rem,5vw,2.4rem);margin:.2rem 0;letter-spacing:-.03em}
+.sub{color:var(--mute);margin:0 0 1rem;max-width:60ch}
+.grid{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:1rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1rem}
+canvas{width:100%;aspect-ratio:1;border-radius:12px;display:block;background:var(--bg)}
+.stats{display:flex;gap:1.2rem;margin-top:.7rem;font-variant-numeric:tabular-nums}
+.stats b{display:block;font-size:1.3rem}
+.stats span{color:var(--mute);font-size:.85rem}
+h2{font-size:1rem;margin:0 0 .5rem}
+.row{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+button{font:inherit;color:inherit;border:1px solid var(--line);background:transparent;border-radius:10px;padding:.5rem .85rem;cursor:pointer}
+button:hover{border-color:var(--a)}
+button[aria-pressed=true]{background:var(--ink);color:var(--card);border-color:var(--ink)}
+button.go{background:var(--a);color:var(--ai);border-color:var(--a);font-weight:700}
+label{display:flex;justify-content:space-between;font-size:.92rem;margin-top:.3rem}
+input[type=range]{width:100%;accent-color:var(--a);margin:0 0 .8rem}
+:focus-visible{outline:3px solid var(--a);outline-offset:2px}
+.legend{color:var(--mute);font-size:.85rem;margin-top:.6rem}
+.dot{display:inline-block;width:.7rem;height:.7rem;border-radius:50%;margin-right:.3rem;vertical-align:middle}
+footer{margin-top:1.2rem;color:var(--mute);font-size:.85rem}
+footer a{color:var(--a)}
+@media(max-width:720px){.grid{grid-template-columns:1fr}}
