@@ -1,0 +1,8 @@
+{
+  "name": "neural-playground",
+  "version": "1.0.0",
+  "description": "A neural network written from scratch that learns live in your browser.",
+  "author": "Vaibhav Singh",
+  "scripts": { "test": "node --test test/network.test.js", "start": "python3 -m http.server 8000" },
+  "license": "MIT"
+}
