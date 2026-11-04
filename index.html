@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Neural Playground</title>
+<meta name="description" content="Train a neural network written from scratch, live in your browser, and watch it learn a decision boundary.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main>
+  <h1>Neural Playground</h1>
+  <p class="sub">A small neural network is learning in your browser right now. Pick a pattern, then change the network and see what it can and cannot learn.</p>
+  <div class="grid">
+    <section class="card" aria-label="Decision boundary">
+      <canvas id="c" width="360" height="360" role="img" aria-label="Network predictions over the data points"></canvas>
+      <div class="stats">
+        <div><b id="ep">0</b><span>steps</span></div>
+        <div><b id="loss">-</b><span>loss</span></div>
+        <div><b id="acc">-</b><span>accuracy</span></div>
+      </div>
+      <p class="legend"><span class="dot" style="background:var(--b)"></span>class A <span class="dot" style="background:var(--a);margin-left:.8rem"></span>class B. The background shows what the network predicts.</p>
+    </section>
+    <section class="card" aria-label="Controls">
+      <h2>Pattern</h2>
+      <div class="row" id="sets"></div>
+      <h2>Network</h2>
+      <label for="L">Hidden layers <b id="Lv">2</b></label>
+      <input id="L" type="range" min="0" max="3" value="2">
+      <label for="H">Neurons per layer <b id="Hv">6</b></label>
+      <input id="H" type="range" min="1" max="10" value="6">
+      <label for="lr">Learning rate <b id="lrv">0.10</b></label>
+      <input id="lr" type="range" min="0.01" max="0.5" step="0.01" value="0.1">
+      <div class="row">
+        <button id="play" class="go">Pause</button>
+        <button id="reset">Restart network</button>
+        <button id="shuffle">New data</button>
+      </div>
+      <p class="legend">Tip: the spiral needs more layers and neurons. With 0 hidden layers the network can only draw a straight line.</p>
+    </section>
+  </div>
+  <footer>Built by Vaibhav Singh from scratch in plain JavaScript. <a href="https://github.com/VaibhavSingh557/neural-playground">View the source on GitHub</a>.</footer>
+</main>
+<script src="js/network.js"></script>
+<script src="js/datasets.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
